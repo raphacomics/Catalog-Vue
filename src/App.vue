@@ -1,8 +1,18 @@
-<script setup>
-import { RouterLink, RouterView } from "vue-router";
+<script>
+import { RouterView } from "vue-router";
 import json from "../catalog.json";
 
-const favAlbums = json;
+const albums = json.album;
+
+export default {
+  data() {
+    return {
+      albums,
+    };
+  },
+};
+
+console.log(json);
 </script>
 
 <template>
@@ -19,22 +29,27 @@ const favAlbums = json;
     </header>
 
     <div
-      v-for="item in favAlbums"
-      class="d-flex align-items-center p-3 border rounded-3 shadow-sm"
+      v-for="(album, index) in albums"
+      class="d-flex align-items-center p-3 border rounded-3 shadow-sm mb-3"
+      :key="index"
     >
       <div class="me-3">
-        <img class="img-fluid rounded-3" :src="item.image" alt="" />
+        <img class="img-fluid rounded-3" :src="album.image" alt="" />
       </div>
-      <div class="d-flex align-items-center justify-content-between w-100">
+      <div class="d-flex justify-content-between w-100">
         <div>
-          <h4 class="mb-0">{{ item.name }}</h4>
-          <p class="mb-1">{{ item.artist }}</p>
-          <p class="badge m-0 text-bg-secondary">{{ item.genre }}</p>
+          <h5 class="mb-0">{{ album.name }}</h5>
+          <p class="mb-1">{{ album.artist }}</p>
+          <p
+            class="badge m-0 text-bg-light border rounded-pill border-dark-subtle"
+          >
+            {{ album.genre }}
+          </p>
         </div>
 
         <div>
-          <span class="text-secondary me-4">Remove</span>
-          <span class="text-primary">Edit</span>
+          <button class="btn btn-light btn-sm me-1">Remove</button>
+          <button class="btn btn-success btn-sm">Edit album</button>
         </div>
       </div>
     </div>
