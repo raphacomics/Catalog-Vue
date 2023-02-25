@@ -14,7 +14,7 @@ const addAlbum = (newAlbum) => {
         id: uid(),
         name: newAlbum.name,
         artist: newAlbum.artist,
-        image: "https://via.placeholder.com/90",
+        image: "https://picsum.photos/90",
         genre: newAlbum.genre
     })
 

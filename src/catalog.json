@@ -3,28 +3,28 @@
     "id": 1,
     "name": "Nine Lives",
     "artist": "Aerosmith",
-    "image": "https://via.placeholder.com/90",
+    "image": "https://picsum.photos/90?random=1",
     "genre": "Rock"
   },
   {
     "id": 2,
     "name": "Trash",
     "artist": "Alice Cooper",
-    "image": "https://via.placeholder.com/90",
+    "image": "https://picsum.photos/90?random=2",
     "genre": "Hard rock"
   },
   {
     "id": 3,
     "name": "Bad",
     "artist": "Michael Jackson",
-    "image": "https://via.placeholder.com/90",
+    "image": "https://picsum.photos/90?random=3",
     "genre": "Pop"
   },
   {
     "id": 4,
     "name": "Ready to Die",
     "artist": "Notorious BIG",
-    "image": "https://via.placeholder.com/90",
+    "image": "https://picsum.photos/90?random=4",
     "genre": "Hip Hop"
   }
 ]
