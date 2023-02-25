@@ -2,45 +2,23 @@
 import { ref, reactive } from "vue";
 
 const openModal = ref(false)
-
-// const newAlbum = ref("")
-// const newArtist = ref("")
-// const newGenre = ref("")
-
-// const addAlbum = () => {
-
-//     console.log(newAlbum)
-// }
-
 const emit = defineEmits(['create-album'])
 
 const createAlbum = reactive({
-    album: "",
+    name: "",
     artist: "",
     genre: "",
-    invalid: null
 })
 
-
-
 const emitAlbum = () => {
-    createAlbum.invalid = null
-
-    if (createAlbum.album && createAlbum.artist !== "") {
-
-        emit("create-album", { ...createAlbum })
-    }
-    console.log(emitAlbum())
-
-
-
+    emit("create-album", createAlbum)
+    openModal.value = false
+    createAlbum.artist = ""
+    createAlbum.name = ""
+    createAlbum.genre = ""
     return
 
-    openModal = false;
 }
-
-
-
 
 </script>
 
@@ -58,7 +36,7 @@ const emitAlbum = () => {
                 <h3>Add a new album</h3>
                 <div class="mb-3">
                     <label class="form-label">Album name</label>
-                    <input v-model="createAlbum.album" class="form-control" type="text">
+                    <input v-model="createAlbum.name" class="form-control" type="text">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Artist name</label>

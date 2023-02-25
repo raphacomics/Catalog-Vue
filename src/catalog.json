@@ -1,23 +1,27 @@
 [
   {
+    "id": 1,
     "name": "Nine Lives",
     "artist": "Aerosmith",
     "image": "https://via.placeholder.com/90",
     "genre": "Rock"
   },
   {
+    "id": 2,
     "name": "Trash",
     "artist": "Alice Cooper",
     "image": "https://via.placeholder.com/90",
     "genre": "Hard rock"
   },
   {
+    "id": 3,
     "name": "Bad",
     "artist": "Michael Jackson",
     "image": "https://via.placeholder.com/90",
     "genre": "Pop"
   },
   {
+    "id": 4,
     "name": "Ready to Die",
     "artist": "Notorious BIG",
     "image": "https://via.placeholder.com/90",
