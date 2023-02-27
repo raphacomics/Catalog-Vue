@@ -26,12 +26,13 @@ const emitAlbum = () => {
     } else {
         createAlbum.errMsg = "ⓘ All fields are required"
     }
-
-
-
-
-
 }
+
+function closeModal() {
+    openModal.value = false
+    createAlbum.errMsg = ""
+}
+
 
 </script>
 
@@ -63,7 +64,7 @@ const emitAlbum = () => {
                 <span class="my-2 text-danger">{{ createAlbum.errMsg }}</span>
                 <hr>
                 <button @click="emitAlbum()" class="btn btn-primary">Add album</button>
-                <button @click="openModal = true ? false : true" class="btn btn-primary-outlined">Close</button>
+                <button @click="closeModal()" class="btn btn-primary-outlined">Close</button>
 
             </div>
         </div>
