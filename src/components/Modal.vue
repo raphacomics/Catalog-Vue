@@ -14,20 +14,22 @@ const createAlbum = reactive({
 const emitAlbum = () => {
     if (createAlbum.artist &&
         createAlbum.name &&
-        createAlbum.genre == "") {
+        createAlbum.genre != "") {
 
         emit("create-album", createAlbum)
+        createAlbum.errMsg = ""
         openModal.value = false
         createAlbum.artist = ""
         createAlbum.name = ""
         createAlbum.genre = ""
+
+    } else {
+        createAlbum.errMsg = "ⓘ All fields are required"
     }
 
-    createAlbum.errMsg = "ⓘ All fields are required"
 
 
 
-    return
 
 }
 
@@ -47,21 +49,21 @@ const emitAlbum = () => {
                 <h3>Add a new album</h3>
                 <div class="mb-3">
                     <label class="form-label">Album name</label>
-                    <input required v-model="createAlbum.name" class="form-control" type="text">
+                    <input v-model="createAlbum.name" class="form-control" type="text">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Artist name</label>
-                    <input required v-model="createAlbum.artist" class="form-control" type="text">
+                    <input v-model="createAlbum.artist" class="form-control" type="text">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Genre</label>
-                    <input required v-model="createAlbum.genre" class="form-control" type="text">
+                    <input v-model="createAlbum.genre" class="form-control" type="text">
                 </div>
 
                 <span class="my-2 text-danger">{{ createAlbum.errMsg }}</span>
                 <hr>
                 <button @click="emitAlbum()" class="btn btn-primary">Add album</button>
-                <button @click="openModal = false" class="btn btn-primary-outlined">Close</button>
+                <button @click="openModal = true ? false : true" class="btn btn-primary-outlined">Close</button>
 
             </div>
         </div>
